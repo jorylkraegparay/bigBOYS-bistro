@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cook Panel</title>
+    <link rel="stylesheet" href="../css/waiter.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT SIDE (INCOMING ORDERS) -->
+    <div class="menu-section">
+
+        <div class="header">
+            <h1>
+                Incoming Orders
+                <span id="welcomeUser"></span>
+            </h1>
+        </div>
+
+        <div id="incomingOrders" class="menu-grid"></div>
+
+    </div>
+
+    <!-- RIGHT SIDE (COOKING NOW) -->
+    <div class="order-section">
+
+        <h1>Cooking Now</h1>
+
+        <div id="cookingOrders"></div>
+
+    </div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-database-compat.js"></script>
+
+<script src="../js/firebase.js"></script>
+
+<script src="../js/cook.js"></script>
+</body>
+</html>

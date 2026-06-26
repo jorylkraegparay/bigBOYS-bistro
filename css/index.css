@@ -1,0 +1,134 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+/* BODY */
+
+body{
+    background:
+        radial-gradient(circle at 15% 10%, rgba(243,156,18,0.10), transparent 40%),
+        radial-gradient(circle at 85% 90%, rgba(31,23,12,0.06), transparent 45%),
+        #fdf8f0; /* same as waiter */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* CONTAINER */
+
+.container{
+    background:#FFF9F1; /* same as cards */
+    padding:36px 32px;
+    border-radius:18px;
+    width:340px;
+    text-align:center;
+    border:1px solid #f6e9d4;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,.6) inset,
+        0 18px 40px rgba(31,23,12,.12),
+        0 4px 10px rgba(31,23,12,.06);
+    animation:bb-rise .45s ease-out;
+}
+
+@keyframes bb-rise{
+    from{ opacity:0; transform:translateY(10px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+/* TITLE */
+
+.container h1{
+    margin-bottom:6px;
+    color:#1f170c; /* same dark text */
+    font-size:24px;
+    letter-spacing:.2px;
+    font-weight:700;
+}
+
+.container p{
+    margin-bottom:24px;
+    color:#8a7c68;
+    font-size:13.5px;
+    letter-spacing:.2px;
+}
+
+/* FORM */
+
+.login-box{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+/* INPUTS */
+
+.login-box input,
+.login-box select{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid #f6e9d4;
+    border-radius:10px;
+    background:#FFF9F1;
+    color:#1f170c;
+    font-size:14px;
+    outline:none;
+    transition:.2s ease;
+    box-shadow:0 1px 2px rgba(31,23,12,.04);
+}
+
+.login-box input::placeholder{
+    color:#b9ab93;
+}
+
+.login-box select{
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* INPUT FOCUS */
+
+.login-box input:focus,
+.login-box select:focus{
+    border-color:#1f170c;
+    box-shadow:0 0 0 3px rgba(31, 23, 12, 0.10);
+}
+
+.login-box input:hover,
+.login-box select:hover{
+    border-color:#e6d8bd;
+}
+
+/* BUTTON */
+
+.login-box button{
+    width:100%;
+    padding:13px;
+    margin-top:4px;
+    background:linear-gradient(180deg, #2a2116, #1f170c); /* same family, just depth */
+    color:#FFF9F1;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:.3px;
+    cursor:pointer;
+    transition:.2s ease;
+    box-shadow:0 8px 16px rgba(31,23,12,.22);
+}
+
+/* BUTTON HOVER */
+
+.login-box button:hover{
+    opacity:0.92;
+    transform:translateY(-1px);
+    box-shadow:0 10px 20px rgba(31,23,12,.28);
+}
+
+.login-box button:active{
+    transform:translateY(0);
+    box-shadow:0 4px 10px rgba(31,23,12,.2);
+}
