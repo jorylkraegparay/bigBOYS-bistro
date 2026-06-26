@@ -1,0 +1,383 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+/* SCROLL HIDDEN */
+.menu-section,
+.details-section{
+    scrollbar-width:none;
+}
+
+.menu-section::-webkit-scrollbar,
+.details-section::-webkit-scrollbar{
+    display:none;
+}
+
+/* BODY */
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#fdf8f0;
+}
+
+.container{
+    display:flex;
+    height:100vh;
+    background:#fdf8f0;
+}
+
+/* HEADER */
+
+.header{
+    margin-bottom:20px;
+}
+
+.header h1{
+    color:#1f170c;
+    font-size:24px;
+    letter-spacing:.2px;
+}
+
+#welcomeUser{
+    font-size:14px;
+    font-weight:normal;
+    margin-left:10px;
+    color:#8a7c68;
+}
+
+/* CATEGORY BUTTONS */
+
+.categories{
+    display:flex;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.categories button{
+    border:1px solid #eee1c9;
+    background:#f6e9d4;
+    color:#1f170c;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.2s ease;
+    box-shadow:0 1px 2px rgba(31,23,12,.04);
+}
+
+/* Hover */
+.categories button:hover{
+    background:#efe1c7;
+    transform:translateY(-1px);
+    box-shadow:0 4px 10px rgba(31,23,12,.08);
+}
+
+/* ACTIVE */
+.categories button.active{
+    background:linear-gradient(180deg, #2a2116, #1f170c);
+    color:#FFF9F1;
+    border:1px solid #1f170c;
+    box-shadow:0 6px 14px rgba(31,23,12,.22);
+}
+
+/* SORT DROPDOWN */
+
+.categories select{
+    border:1px solid #eee1c9;
+    background:#f6e9d4;
+    color:#1f170c;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    outline:none;
+    transition:.2s ease;
+    box-shadow:0 1px 2px rgba(31,23,12,.04);
+}
+
+.categories select:hover{
+    background:#efe1c7;
+}
+
+/* GRID */
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:20px;
+}
+
+.menu-section{
+    width:65%;
+    padding:24px;
+    overflow-y:auto;
+}
+
+/* RIGHT PANEL */
+
+.details-section{
+    width:35%;
+    padding:24px;
+    background:
+        radial-gradient(circle at 90% 0%, rgba(255,255,255,.04), transparent 50%),
+        linear-gradient(165deg, #261d13, #1f170c 60%);
+    color:#FFF9F1;
+    border-left:3px solid #e6d8bd;
+    position:relative;
+    box-shadow:inset 0 0 40px rgba(0,0,0,.15);
+}
+
+.details-section h1{
+    font-size:22px;
+    letter-spacing:.2px;
+    margin-bottom:6px;
+}
+
+.details-section label{
+    display:block;
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+    color:#c9bca2;
+    margin-top:14px;
+    margin-bottom:4px;
+}
+
+#emptyState{
+    color:#c9bca2;
+    margin-top:30px;
+    text-align:center;
+    font-size:14px;
+}
+
+.details-section input{
+    width:100%;
+    padding:11px 12px;
+    margin:0 0 4px;
+    border:1px solid rgba(255,249,241,.12);
+    border-radius:8px;
+    outline:none;
+    background:#FFF9F1;
+    color:#1f170c;
+    font-size:14px;
+    transition:.2s ease;
+}
+
+.details-section input:focus{
+    box-shadow:0 0 0 3px rgba(243,156,18,.25);
+}
+
+/* CARD */
+
+.food-card{
+    background:#FFF9F1;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(31,23,12,.06);
+    border:1px solid #f6e9d4;
+    transition:.25s ease;
+    display:flex;
+    flex-direction:column;
+}
+
+.food-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 14px 28px rgba(31,23,12,.14);
+    border-color:#eee1c9;
+}
+
+/* IMAGE */
+
+.food-card img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+}
+
+/* TEXT */
+
+.food-card h3{
+    padding:10px;
+    font-size:16px;
+    color:#1f170c;
+    font-weight:700;
+}
+
+.food-card p{
+    padding:0 10px;
+    color:#8a7c68;
+    font-size:14px;
+}
+
+/* PRICE + RATING */
+
+.price-rating{
+    padding:0 10px;
+    font-size:14px;
+    color:#5b4f3e;
+    font-weight:600;
+}
+
+/* TAGS */
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+    padding:8px 10px 12px;
+}
+
+.tag{
+    display:inline-block;
+    padding:5px 11px;
+    margin:5px 5px 0 0;
+    border-radius:20px;
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:.2px;
+    color:#fff;
+    box-shadow:0 2px 5px rgba(0,0,0,.12);
+}
+
+/* TAG COLORS */
+
+.tag[data-tag="Best Seller"]{
+    background:#e74c3c;
+}
+
+.tag[data-tag="Most Popular"]{
+    background:#8e44ad;
+}
+
+.tag[data-tag="Spicy"]{
+    background:#d35400;
+}
+
+.tag[data-tag="Student"]{
+    background:#2980b9;
+}
+
+.tag[data-tag="New"]{
+    background:#27ae60;
+}
+
+.tag[data-tag="Vegetarian"]{
+    background:#16a085;
+}
+
+.tag[data-tag="Healthy"]{
+    background:#2ecc71;
+}
+
+/* SEARCH */
+
+#searchInput{
+    width:100%;
+    padding:12px 14px;
+    margin-bottom:15px;
+    border:1px solid #f6e9d4;
+    border-radius:10px;
+    outline:none;
+    background:#FFF9F1;
+    color:#1f170c;
+    font-size:14px;
+    transition:.2s ease;
+    box-shadow:0 1px 2px rgba(31,23,12,.04);
+}
+
+#searchInput::placeholder{
+    color:#b9ab93;
+}
+
+#searchInput:focus{
+    border-color:#1f170c;
+    box-shadow:0 0 0 3px rgba(31,23,12,.10);
+}
+
+/* IMAGE PREVIEW */
+
+.preview-image{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+/* ACTION BUTTONS */
+
+.action-buttons{
+    position:absolute;
+    bottom:20px;
+    left:24px;
+    right:24px;
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.save-btn, .cancel-btn{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:.2px;
+    transition:.2s ease;
+}
+
+.save-btn{
+    background:linear-gradient(180deg, #57bb5b, #4CAF50);
+    color:white;
+    box-shadow:0 8px 16px rgba(76,175,80,.3);
+}
+
+.save-btn:hover{
+    transform:translateY(-1px);
+    box-shadow:0 10px 20px rgba(76,175,80,.36);
+}
+
+.cancel-btn{
+    background:#6c6258;
+    color:#FFF9F1;
+}
+
+.cancel-btn:hover{
+    background:#5d5449;
+}
+
+/* TAG CONTROLS */
+
+.tag-controls button{
+    padding:8px 14px;
+    margin:5px 5px 0 0;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:600;
+    font-size:13px;
+
+    background:#FFF9F1;
+    color:#1f170c;
+
+    transition:.2s ease;
+}
+
+.tag-controls button:hover{
+    background:#fff;
+    transform:translateY(-1px);
+}
+
+.tag-controls button.active{
+    background:#f39c12;
+    color:#FFF9F1;
+    box-shadow:0 4px 10px rgba(243,156,18,.35);
+}

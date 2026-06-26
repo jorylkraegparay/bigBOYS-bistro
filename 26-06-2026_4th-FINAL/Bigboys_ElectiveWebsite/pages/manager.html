@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Manager Dashboard</title>
+
+        <link rel="stylesheet" href="../css/manager.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <!-- LEFT SIDE -->
+            <div class="menu-section">
+
+                <div class="header">
+                    <h1>
+                        Menu Management 
+                        <span id="welcomeUser"></span>
+                    </h1>
+                </div>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search food..."
+                    onkeyup="searchFood()"
+                >
+
+                <div class="categories">
+                    <button onclick="filterMenu('all', this)">All</button>
+                    <button onclick="filterMenu('riceAndPlatters', this)">Rice & Platters</button>
+                    <button onclick="filterMenu('friesAndExtra', this)">Fries & Extra</button>
+                    <button onclick="filterMenu('drinksAndDesserts', this)">Drinks & Desserts</button>
+                    <button onclick="filterMenu('studentMeals', this)">Student Meals</button>
+
+                    <!-- SORT DROPDOWN -->
+                    <select id="sortSelect" onchange="applyFilters()">
+                        <option value="default">Default Rating</option>
+                        <option value="high">Highest to Lowest Rating</option>
+                        <option value="low">Lowest to Highest Rating</option>
+                    </select>
+                </div>
+
+                <div id="menuGrid" class="menu-grid"></div>
+
+            </div>
+            <!-- RIGHT SIDE -->
+            <div class="details-section">
+
+                <h1>Food Details</h1>
+
+                <div id="emptyState">
+                    Select a food item to edit.
+                </div>
+
+                <div
+                    id="editorPanel"
+                    style="display:none;">
+
+                    <img
+                        id="foodImage"
+                        class="preview-image">
+
+                    <label>Name</label>
+
+                    <input
+                        type="text"
+                        id="foodName">
+
+                    <label>Price</label>
+
+                    <input type="number" id="foodPrice">
+
+                    <label>Rating</label>
+                    <input type="number" id="foodRating" step="0.1" min="0" max="5">
+
+                    <label>Tags</label>
+                    <div id="tagContainer"></div>
+
+                    <!-- TAG FILTER BUTTON -->
+                    <div class="tag-controls">
+                        <button onclick="toggleTag(this, 'Best Seller')">Best Seller</button>
+                        <button onclick="toggleTag(this, 'Most Popular')">Most Popular</button>
+                        <button onclick="toggleTag(this, 'Spicy')">Spicy</button>
+                        <button onclick="toggleTag(this, 'Student')">Student</button>
+                        <button onclick="toggleTag(this, 'New')">New</button>
+                        <button onclick="toggleTag(this, 'Vegetarian')">Vegetarian</button>
+                        <button onclick="toggleTag(this, 'Healthy')">Healthy</button>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="cancel-btn" onclick="cancelEdit()"> Cancel </button>
+                        <button class="save-btn" onclick="saveFood()"> Save </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-database-compat.js"></script>
+
+<script src="../js/firebase.js"></script>
+        <script src="../js/menuData.js"></script>
+        <script src="../js/menuStorage.js"></script>
+        <script src="../js/manager.js"></script>
+
+    </body>
+</html>

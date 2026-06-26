@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Waiter Panel</title>
+    <link rel="stylesheet" href="../css/waiter.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="menu-section">
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1>
+                BIG B's MENU
+                <span id="welcomeUser"></span>
+            </h1>
+        </div>
+
+        <!-- SEARCH -->
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search food..."
+            onkeyup="searchFood()"
+        >
+
+        <!-- CATEGORIES -->
+        <div class="categories">
+            <button onclick="filterMenu('all', this)">All</button>
+            <button onclick="filterMenu('riceAndPlatters', this)">Rice & Platters</button>
+            <button onclick="filterMenu('friesAndExtra', this)">Fries & Extra</button>
+            <button onclick="filterMenu('drinksAndDesserts', this)">Drinks & Desserts</button>
+            <button onclick="filterMenu('studentMeals', this)">Student Meals</button>
+
+            <!-- SORT DROPDOWN -->
+            <div id="sortBtn" onclick="toggleSort()">
+
+                <span id="upArrow">↑</span>
+                <span id="downArrow">↓</span>
+
+            </div>
+        </div>
+
+        <!-- FOOD GRID -->
+        <div id="menuGrid" class="menu-grid"></div>
+
+    </div>
+
+    <!-- RIGHT SIDE (ORDER PANEL) -->
+    <div class="order-section">
+
+        <h1>Order Summary</h1>
+        <div class="summary-divider"></div>
+        <div id="emptyState">
+
+            <img src="../FoodMenu/empty-orders.png" class="empty-icon">
+        </div>
+        <div id="orderList"></div>
+
+        <div class="total-area">
+            <h3 id="totalPrice">Total: ₱0</h3>
+        </div>
+
+        <button class="clear-btn" onclick="clearOrder()">
+            Clear Order
+        </button>
+
+        <button class="checkout-btn" onclick="placeOrder()">
+            Place Order
+        </button>
+    </div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.15.0/firebase-database-compat.js"></script>
+
+<script src="../js/firebase.js"></script>
+
+<script src="../js/menuData.js"></script>
+<script src="../js/menuStorage.js"></script>
+<script src="../js/waiter.js"></script>
+
+</body>
+</html>
